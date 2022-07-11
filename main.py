@@ -1,7 +1,7 @@
 import os
 import requests
 import telebot
-from weather import cairo, mecca
+import keep_alive
 
 BOT_API = os.environ['BOT_KEY']
 
@@ -29,7 +29,7 @@ def mecca(message):
   celsius = (f-32)*(5/9)
   c = round(celsius)
   weather = data['data']['summary']
-  bot.send_message(message.chat.id, "The Tempreture in Mecca now is Around ({} C°)".format(c))
+  bot.send_message(message.chat.id, "Tempreture in Mecca now is Around ({} C°)".format(c))
   bot.send_message(message.chat.id, "The Weather is ({})".format(weather))
 
 # Get Cairo Weather Command
@@ -44,7 +44,8 @@ def cairo(message):
   c = (f-32)*(5/9)
   celsius = round(c)
   weather = data['data']['summary']
-  bot.send_message(message.chat.id, "The Tempreture in Cairo now is Around ({} C°)".format(celsius))
+  bot.send_message(message.chat.id, "Tempreture in Cairo now is Around ({} C°)".format(celsius))
   bot.send_message(message.chat.id, "The Weather is ({})".format(weather))
 
 bot.infinity_polling()
+keep_alive.run()
