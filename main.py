@@ -64,7 +64,7 @@ def coordinates(message):
     c = (f-32)*(5/9)
     celsius = round(c)
     weather = data['data']['summary']
-    bot.send_message(message.chat.id, "Tempreture in This Location is now Around ({} C°)".format(celsius))
+    bot.send_message(message.chat.id, "Tempreture in This Location now is Around ({} C°)".format(celsius))
     bot.send_message(message.chat.id, "The Weather in This Location is ({})".format(weather))
 
 
