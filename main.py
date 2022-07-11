@@ -48,4 +48,4 @@ def cairo(message):
   bot.send_message(message.chat.id, "The Weather is ({})".format(weather))
 
 bot.infinity_polling()
-keep_alive.run()
+keep_alive.keep_alive()
